@@ -2,13 +2,18 @@ package com.sportyshoes.basepackage.service;
 
 import java.util.List;
 
-import com.sportyshoes.basepackage.model.ShoeData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.sportyshoes.basepackage.model.ShoeData;
+import com.sportyshoes.basepackage.repository.ShoeRepository;
+
+@Service
 public interface ShoeService {
 	
 	public List<ShoeData> findAll();
-	public ShoeData findByShoeName(String shoename);
-	public List<ShoeData> insertData();
-	public ShoeData deleteById(int theId);
-	ShoeData findById(int theId);
+//	public ShoeData findByItemName(String shoename);
+	public ShoeData insertData(ShoeData shoeData);
+	public ShoeData deleteById(long theId);
+	public ShoeData findById(long theId);
 }

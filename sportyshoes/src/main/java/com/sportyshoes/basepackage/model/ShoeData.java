@@ -1,14 +1,30 @@
 package com.sportyshoes.basepackage.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+//@Entity annotation defines that a class can be mapped to a table. 
+//And that is it, it is just a marker, like for example Serializable interface.
+@Entity
+@Table(name="shoelist")
 public class ShoeData {
 	
-	public int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public long id;
 	public String shoeName;
 	public String description;
 	public int price;
 	public String size;
 	public String userGroup;
 	public String color;
+	
+	public ShoeData() {
+		super();
+	}
 	
 	public ShoeData(int id, String shoeName, String description, int price, String size, String userGroup,
 			String color) {
@@ -23,12 +39,7 @@ public class ShoeData {
 	}
 	
 	
-	public ShoeData() {
-		super();
-	}
-
-
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

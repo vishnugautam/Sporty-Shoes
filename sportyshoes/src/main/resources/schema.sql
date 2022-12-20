@@ -1,5 +1,7 @@
+drop table shoelist;
+
 create table shoelist (
-	id bigint primary key auto_increment,
+	id bigint,
 	shoename varchar(45),
 	description varchar(45),
 	price bigint, 
