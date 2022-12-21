@@ -11,18 +11,18 @@
 	<h2>${message}</h2>
 	
 	<h3>To add an Item:</h3>
-	<form action="additem" method="get">
+	<form action="additem" method="post">
 		Enter Color  name: <input type="text" name="color"><br>
 		Enter Description: <input type="text" name="description"><br>
 		Enter Price: <input type="number" name="price"><br>
-		Enter Shoe Name: <input type="text" name="shoename"><br>
+		Enter Shoe Name: <input type="text" name="shoe_name"><br>
 		Enter Size: <input type="text" name="size"><br>
-		Enter User Group: <input type="text" name="usergroup"><br>
+		Enter User Group: <input type="text" name="user_group"><br>
 		<button>Submit</button>
 	</form>
 	
 	<h3>To delete an Item:</h3>
-	<form action="" method="get">
+	<form action="deletebyid" method="post">
 		Enter Shoe name: <input type="text" name="shoename"><br>
 		<button>Submit</button>
 	</form>
@@ -34,6 +34,7 @@
 	</form>
 	
 	<a href="getallitem" name="getallitem">View all items</a>
+	
 	
 </body>
 </html>

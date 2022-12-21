@@ -17,7 +17,7 @@ public class ShoeData {
 	public long id;
 	public String shoeName;
 	public String description;
-	public int price;
+	public String price;
 	public String size;
 	public String userGroup;
 	public String color;
@@ -26,7 +26,7 @@ public class ShoeData {
 		super();
 	}
 	
-	public ShoeData(int id, String shoeName, String description, int price, String size, String userGroup,
+	public ShoeData(int id, String shoeName, String description, String price, String size, String userGroup,
 			String color) {
 		super();
 		this.id = id;
@@ -65,11 +65,11 @@ public class ShoeData {
 		this.description = description;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
