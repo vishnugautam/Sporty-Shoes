@@ -10,7 +10,7 @@
 <title>warehouse</title>
 </head>
 <body>
-	<table>
+	<table style="width:500px">
 		<th>Id</th>
 		<th>Color</th>
 		<th>Description</th>

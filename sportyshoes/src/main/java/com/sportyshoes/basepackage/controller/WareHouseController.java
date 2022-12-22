@@ -58,7 +58,7 @@ public class WareHouseController {
 	}
 	
 	@RequestMapping(value="/additem", method=RequestMethod.POST)
-	public String insertItem(Model model, @RequestParam(value = "shoe_name") String shoename, ShoeData data) {
+	public String insertItem(Model model, @RequestParam(value = "shoeName") String shoename, ShoeData data) {
 //		ShoeData data = new ShoeData();
 //		ShoeData data = (ShoeData) model.getAttribute("additem");
 //		String shoeName = data.getShoeName();
@@ -75,16 +75,24 @@ public class WareHouseController {
 		// the data is a class, so we have to convert it into List for the JSTL to iterate
 		List<ShoeData> convertedData = new ArrayList<ShoeData>();
 		convertedData.add(data);
-		System.out.println(data.getClass());
+//		System.out.println(data.getClass());
 		model.addAttribute("totalShoes", convertedData);
 		return "warehouse";
 	}
 	
 	@RequestMapping(value = "deletebyid", method=RequestMethod.POST)
-	public String deleteById( int id) {
-		String shoename = "shoe";
-		ResponseEntity data = resource.delete(shoename, id);
-		return "redirect:entry";
+	public String deleteById( Long id) {
+		ResponseEntity data = resource.delete(id);
+		return "entry";
+	}
+	
+	@RequestMapping(value = "showbyid", method=RequestMethod.GET)
+	public String showById(Model model, int id) {
+		ShoeData getId = resource.getShoeById(id);
+		List<ShoeData> convertedData = new ArrayList<ShoeData>();
+		convertedData.add(getId);
+		model.addAttribute("totalShoes", convertedData);
+		return "warehouse";
 	}
 
 }

@@ -50,10 +50,9 @@ public class RestfulResource {
 		return saveData;
 	}
 	
-	@DeleteMapping(path = "{shoename}/shoelist/{id}")
-	public ResponseEntity delete(@PathVariable String shoename, @PathVariable long id) {
+	@DeleteMapping(path = "/shoelist/{id}")
+	public ResponseEntity delete(@PathVariable Long id) {
 		ShoeData data = shoeService.deleteById(id);
-		
 		if(data != null) {
 			// noContent means it would return 204 status code 
 			return ResponseEntity.noContent().build();
@@ -61,7 +60,6 @@ public class RestfulResource {
 		
 		return ResponseEntity.notFound().build();
 	}
+	}
 	
 	
-	
-}

@@ -26,7 +26,7 @@ public class ShoeData {
 		super();
 	}
 	
-	public ShoeData(int id, String shoeName, String description, String price, String size, String userGroup,
+	public ShoeData(long id, String shoeName, String description, String price, String size, String userGroup,
 			String color) {
 		super();
 		this.id = id;
@@ -44,7 +44,7 @@ public class ShoeData {
 	}
 
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
