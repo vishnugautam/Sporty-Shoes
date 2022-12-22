@@ -7,7 +7,7 @@
 <body>
 	<h1>Welcome to SportyShoes</h1>
 	
-	<form action="loginaction" method="post">
+	<form action="entry.html" method="post">
 	<input type="text" name="adminname">
 	<input type="password" name="password">
 	<button>Submit</button>
